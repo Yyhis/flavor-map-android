@@ -3,6 +3,3 @@
 # env
 local.properties
 .env
-
-# for BuildConfig
-java
