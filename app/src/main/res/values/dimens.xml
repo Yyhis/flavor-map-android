@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- image set 추가 -->
+    <dimen name="image_width">140dp</dimen>
+    <dimen name="image_height">140dp</dimen>
+    <dimen name="image_margin_end">0dp</dimen>
+
+    <!-- corner_radius 추가 -->
+    <dimen name="corner_radius">10dp</dimen>
+</resources>
