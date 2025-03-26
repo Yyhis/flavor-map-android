@@ -1,5 +1,6 @@
 package net.yyhis.flavormap.android.data.api
 
+import net.yyhis.flavormap.android.BuildConfig.base_url
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.http.Header
@@ -39,7 +40,7 @@ object RetrofitClient {
             val okHttpClient = OkHttpClient.Builder().build()
 
             retrofit = Retrofit.Builder()
-                .baseUrl("https://server.yyhis.net:8899/")  // Base URL 설정
+                .baseUrl(base_url)  // Base URL 설정
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())  // Gson 변환기 설정
                 .build()

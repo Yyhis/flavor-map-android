@@ -32,6 +32,7 @@ android {
             // resValue("string", "kakao_native_app_key", properties["KAKAO_NATIVE_APP_KEY"] as String)
             buildConfigField("String", "kakao_native_app_key", properties["KAKAO_NATIVE_APP_KEY"] as String)
             buildConfigField("String", "naver_map_sdk_key", properties["NAVER_MAP_SDK_KEY"] as String)
+            buildConfigField("String", "base_url", properties["BASE_URL"] as String)
             manifestPlaceholders["kakao_native_app_redirect"] = properties["KAKAO_NATIVE_APP_REDIRECT"] as String
         }
         release {
@@ -44,6 +45,7 @@ android {
             // env
             buildConfigField("String", "kakao_native_app_key", properties["KAKAO_NATIVE_APP_KEY"] as String)
             buildConfigField("String", "naver_map_sdk_key", properties["NAVER_MAP_SDK_KEY"] as String)
+            buildConfigField("String", "base_url", properties["BASE_URL"] as String)
             manifestPlaceholders["kakao_native_app_redirect"] = properties["KAKAO_NATIVE_APP_REDIRECT"] as String
         }
     }
