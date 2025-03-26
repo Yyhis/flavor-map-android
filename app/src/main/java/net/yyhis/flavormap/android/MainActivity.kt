@@ -3,18 +3,15 @@ package net.yyhis.flavormap.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.icons.filled.*
-import androidx.compose.material.icons.outlined.*
-import androidx.compose.material3.*
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.kakao.sdk.common.KakaoSdk
 // import com.naver.maps.map.NaverMapSdk
 import net.yyhis.flavormap.android.BuildConfig.kakao_native_app_key
 import net.yyhis.flavormap.android.BuildConfig.naver_map_sdk_key
 import net.yyhis.flavormap.android.ui.theme.MyApplicationTheme
-import net.yyhis.flavormap.android.ui.theme.*
 import net.yyhis.flavormap.android.ui.common.MainScreen
+import net.yyhis.flavormap.android.util.SecureStorage
 import net.yyhis.flavormap.android.viewmodel.SessionViewModel
 
 class MainActivity : ComponentActivity() {
@@ -27,7 +24,10 @@ class MainActivity : ComponentActivity() {
         // NaverMapSdk.getInstance(this).client = NaverMapSdk.NaverCloudPlatformClient(naver_map_sdk_key)
 
         setContent {
+            // 남아있는 세션 검증 및 확인
             val sessionViewModel = viewModel<SessionViewModel>()
+            sessionViewModel.checkSession(SecureStorage(LocalContext.current))
+            
             MyApplicationTheme {
                 MainScreen(sessionViewModel)
             }
