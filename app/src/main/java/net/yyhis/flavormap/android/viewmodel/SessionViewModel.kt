@@ -34,6 +34,7 @@ class SessionViewModel: ViewModel() {
             Log.i("SessionViewModel", "Token is valid")
             _sessionValidation.value = true
         } else {
+            clearSession(secureStorage)
             _sessionValidation.value = false
         }
     }
